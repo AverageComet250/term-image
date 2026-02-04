@@ -11,51 +11,49 @@ name = "term-image"
 description = "Display images in the terminal"
 requires-python = ">=3.9"
 dependencies = [
-    "pillow>=9.1",
-    "requests>=2.23,<3",
-    "typing_extensions>=4.8,<5",
+  "pillow>=11.0",
+  "requests>=2.23,<3",
+  "typing_extensions>=4.8,<5",
 ]
-authors = [
-    {name = "Toluwaleke Ogundipe", email = "anonymoux47@gmail.com"},
-]
-license = {text = "MIT License"}
+authors = [{ name = "Toluwaleke Ogundipe", email = "anonymoux47@gmail.com" }]
+license = { text = "MIT License" }
 readme = "README.md"
 keywords = [
-    "image",
-    "terminal",
-    "viewer",
-    "PIL",
-    "Pillow",
-    "console",
-    "xterm",
-    "library",
-    "cli",
-    "tui",
-    "ANSI",
-    "ASCII-Art",
-    "kitty",
-    "iterm2",
-    "sixel",
-    "graphics",
+  "image",
+  "terminal",
+  "viewer",
+  "PIL",
+  "Pillow",
+  "console",
+  "xterm",
+  "library",
+  "cli",
+  "tui",
+  "ANSI",
+  "ASCII-Art",
+  "kitty",
+  "iterm2",
+  "sixel",
+  "graphics",
 ]
 classifiers = [
-    "Environment :: Console",
-    "License :: OSI Approved :: MIT License",
-    "Intended Audience :: Developers",
-    "Operating System :: POSIX :: Linux",
-    "Operating System :: MacOS",
-    "Operating System :: Android",
-    "Operating System :: Microsoft :: Windows",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3.13",
-    "Programming Language :: Python :: 3 :: Only",
-    "Topic :: Software Development :: Libraries",
-    "Topic :: Terminals :: Terminal Emulators/X Terminals",
-    "Topic :: Multimedia :: Graphics :: Viewers",
+  "Environment :: Console",
+  "License :: OSI Approved :: MIT License",
+  "Intended Audience :: Developers",
+  "Operating System :: POSIX :: Linux",
+  "Operating System :: MacOS",
+  "Operating System :: Android",
+  "Operating System :: Microsoft :: Windows",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Software Development :: Libraries",
+  "Topic :: Terminals :: Terminal Emulators/X Terminals",
+  "Topic :: Multimedia :: Graphics :: Viewers",
 ]
 
 [project.optional-dependencies]
@@ -78,10 +76,10 @@ relative_files = true
 
 [tool.coverage.report]
 exclude_also = [
-    "def __repr__",
-    "raise NotImplementedError",
-    "if TYPE_CHECKING:",
-    "@overload",
+  "def __repr__",
+  "raise NotImplementedError",
+  "if TYPE_CHECKING:",
+  "@overload",
 ]
 skip_covered = true
 sort = "-cover"
@@ -100,26 +98,23 @@ warn_unused_configs = true
 
 [[tool.mypy.overrides]]
 module = [
-    'term_image.renderable.*',
-    'term_image.render.*',
-    'term_image.image.*',
+  'term_image.renderable.*',
+  'term_image.render.*',
+  'term_image.image.*',
 ]
 disable_error_code = ["type-abstract"]
 
 # These modules will go through massive changes real soon
 [[tool.mypy.overrides]]
-module = [
-    'term_image.image.*',
-    'term_image.widget.*',
-]
+module = ['term_image.image.*', 'term_image.widget.*']
 ignore_errors = true
 
 [tool.pytest.ini_options]
 addopts = "-v -r a"
 filterwarnings = [
-    "error",
-    "ignore:.+in a terminal:UserWarning:term_image.utils",
+  "error",
+  "ignore:.+in a terminal:UserWarning:term_image.utils",
 ]
 
 [tool.setuptools.dynamic]
-version = {attr = "term_image.version_info"}
+version = { attr = "term_image.version_info" }
